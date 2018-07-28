@@ -11,6 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/login', 'LoginController@index')->name('login');
+Route::post('/login', 'LoginController@authlogin')->name('authlogin');
+Route::get('/logout', 'LoginController@logout')->name('logout');
+Route::get('/', 'LoginController@check')->name('logincheck');
+
+
+
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
+    Route::get('/',function(){
+        return view('admin.index');
+    })->name('admin.index');
+    
+    //Route::resource('niveles', 'NivelesController');
+   
 });
