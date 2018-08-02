@@ -10,4 +10,7 @@ class Tienda extends Model
     protected $primaryKey ="idtienda";
     protected $fillable = ['nombre','direccion','telefono'];
     public $timestamps = false;
+    public function sucursales(){
+        return $this->hasMany('App\Sucursal','idtienda');
+    }
 }

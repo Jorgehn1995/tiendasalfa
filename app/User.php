@@ -28,4 +28,11 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function tipo(){
+        return $this->belongsTo('App\Tipo','idtipo');
+    }
+    public function sucursales(){
+        return $this->hasMany('App\Sucursal','idusuario');
+    }
 }

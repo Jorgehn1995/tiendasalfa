@@ -12,6 +12,7 @@
     <link rel="shortcut icon" href="{{ASSET('images/favicon.ico')}}">
 
     <!-- App css -->
+    
     <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('css/icons.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('css/style.css')}}" rel="stylesheet" type="text/css" />

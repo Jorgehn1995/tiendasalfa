@@ -8,6 +8,12 @@ class Sucursal extends Model
 {
     protected $table = "sucursales";
     protected $primaryKey ="idsucursal";
-    protected $fillable = ['nombre','direccion','telefono','encargado','idtienda'];
+    protected $fillable = ['nombre','direccion','telefono','idusuario','idtienda'];
     public $timestamps = false;
+    public function tienda(){
+        return $this->belongsTo('App\Tienda','idtienda');
+    }
+    public function encargado(){
+        return $this->belongsTo('App\User','idusuario');
+    }
 }

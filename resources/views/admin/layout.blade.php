@@ -11,7 +11,8 @@
 
     <title>AlfaPOS :. @yield('title')</title>
 
-
+    <link href="{{asset('theme 2/plugins/sweet-alert/sweetalert2.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('theme 2/plugins/tablesaw/css/tablesaw.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('theme 2/plugins/switchery/switchery.min.css')}}" rel="stylesheet" type="text/css" />
 
     <link href="{{asset('theme 2/plugins/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
@@ -130,9 +131,9 @@
                             <a href="#" class="waves-effect waves-primary"><i class="ti-home"></i><span> Inicio </span></a>
                         </li>
                         <li>
-                            <a href="#" class="waves-effect waves-primary"><i class=" ti-dropbox"></i><span> Productos </span></a>
+                            <a href="{{route('productos.index')}}" class="waves-effect waves-primary"><i class=" ti-dropbox"></i><span> Productos </span></a>
                         </li>
-                        <li>
+                       <!-- <li>
                             <a href="#" class="waves-effect waves-primary"><i class=" ti-split-h"></i><span> Existencias </span></a>
                         </li>
                         <li>
@@ -159,12 +160,20 @@
                                 </li>
                             </ul>
                         </li>
+                        
                         <li>
                             <a href="#" class="waves-effect waves-primary"><i class=" ti-settings"></i><span> Ajustes </span></a>
+                        </li>-->
+                        <li>
+                            <a href="{{route('sucursales.index')}}" class="waves-effect waves-primary"><i class=" ti-map-alt"></i><span> Sucursales </span></a>
                         </li>
                         <li>
-                        <a href="{{route('logout')}}" class="waves-effect waves-primary"><i class=" ti-power-off"></i><span> Salir </span></a>
+                            <a href="{{route('usuarios.index')}}" class="waves-effect waves-primary"><i class=" ti-user"></i><span> Usuarios </span></a>
                         </li>
+                        <li>
+                            <a href="{{route('logout')}}" class="waves-effect waves-primary"><i class=" ti-power-off"></i><span> Salir </span></a>
+                        </li>
+
                     </ul>
                     <div class="clearfix"></div>
                 </div>
@@ -366,6 +375,20 @@
     <script src="{{asset('theme 2/plugins/datatables/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('theme 2/plugins/datatables/dataTables.bootstrap4.min.js')}}"></script>
     <script src="{{asset('theme 2/plugins/datatables/accent-neutralise.js')}}"></script>
+
+    <!-- Tablesaw js -->
+    <script src="{{asset('theme 2/plugins/tablesaw/js/tablesaw.js')}}"></script>
+    <script src="{{asset('theme 2/plugins/tablesaw/js/tablesaw-init.js')}}"></script>
+
+    <!-- Sweet Alert Js  -->
+    <script src="{{asset('theme 2/plugins/sweet-alert/sweetalert2.min.js')}}"></script>
+
+
+    <!-- Notification js -->
+    <script src="{{asset('theme 2/plugins/notifyjs/dist/notify.min.js')}}"></script>
+    <script src="{{asset('theme 2/plugins/notifications/notify-metro.js')}}"></script>
+
+
 
     <!-- Buttons examples -->
     <script src="{{asset('theme 2/plugins/datatables/dataTables.buttons.min.js')}}"></script>

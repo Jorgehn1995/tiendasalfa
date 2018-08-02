@@ -23,6 +23,13 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
         return view('admin.index');
     })->name('admin.index');
     
-    //Route::resource('niveles', 'NivelesController');
-   
+    Route::resource('usuarios', 'UsuariosController');
+    Route::resource('sucursales', 'SucursalesController');
+    Route::resource('productos', 'ProductosController');
+    Route::get('productos/busqueda/{barras}','ProductosController@busquedaajax');
+    Route::get('productos/json/categorias','ProductosController@categorias');
+    Route::post('productos/json/store','ProductosController@store');
+    Route::get('productos/json/sucursales/{id}','ProductosController@revisarexistencia');
+    Route::post('productos/json/existencia','ProductosController@agregarexistencia');
+    Route::post('venta','VentaController@login');
 });
