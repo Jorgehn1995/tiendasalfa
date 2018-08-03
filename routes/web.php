@@ -31,5 +31,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::post('productos/json/store','ProductosController@store');
     Route::get('productos/json/sucursales/{id}','ProductosController@revisarexistencia');
     Route::post('productos/json/existencia','ProductosController@agregarexistencia');
-    Route::post('venta','VentaController@login');
+    Route::get('venta/{sucursal}','VentasController@login');
+    Route::get('venta/temp/load','VentasController@temp');
 });

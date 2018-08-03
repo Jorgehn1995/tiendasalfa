@@ -11,20 +11,20 @@
 
     <title>AlfaPOS :. @yield('title')</title>
 
-    <link href="{{asset('theme 2/plugins/sweet-alert/sweetalert2.min.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('theme 2/plugins/tablesaw/css/tablesaw.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('theme 2/plugins/switchery/switchery.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('tema2/plugins/sweet-alert/sweetalert2.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('tema2/plugins/tablesaw/css/tablesaw.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('tema2/plugins/switchery/switchery.min.css')}}" rel="stylesheet" type="text/css" />
 
-    <link href="{{asset('theme 2/plugins/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('theme 2/plugins/datatables/buttons.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('theme 2/plugins/datatables/responsive.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('tema2/plugins/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('tema2/plugins/datatables/buttons.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('tema2/plugins/datatables/responsive.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
 
-    <link href="{{asset('theme 2/plugins/morris/morris.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('tema2/plugins/morris/morris.css')}}" rel="stylesheet" type="text/css" />
 
-    <link href="{{asset('theme 2/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('theme 2/css/icons.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('theme 2/css/style.css')}}" rel="stylesheet" type="text/css" />
-    <script src="{{asset('theme 2/js/modernizr.min.js')}}"></script>
+    <link href="{{asset('tema2/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('tema2/css/icons.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('tema2/css/style.css')}}" rel="stylesheet" type="text/css" />
+    <script src="{{asset('tema2/js/modernizr.min.js')}}"></script>
 
 
 </head>
@@ -56,48 +56,7 @@
                             </a>
                     </li>
 
-                    <li class="list-inline-item notification-list">
-                        <a class="nav-link right-bar-toggle waves-light waves-effect" href="#">
-                                <i class="mdi mdi-dots-horizontal noti-icon"></i>
-                            </a>
-                    </li>
-
-                    <li class="list-inline-item dropdown notification-list">
-                        <a class="nav-link dropdown-toggle arrow-none waves-light waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false"
-                            aria-expanded="false">
-                                <i class="mdi mdi-bell noti-icon"></i>
-                                <span class="badge badge-pink noti-icon-badge">4</span>
-                            </a>
-                        <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-menu-lg" aria-labelledby="Preview">
-                            <!-- item-->
-                            <div class="dropdown-item noti-title">
-                                <h5 class="font-16"><span class="badge badge-danger float-right">5</span>Notification</h5>
-                            </div>
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <div class="notify-icon bg-success"><i class="mdi mdi-comment-account"></i></div>
-                                <p class="notify-details">Robert S. Taylor commented on Admin<small class="text-muted">1 min ago</small></p>
-                            </a>
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <div class="notify-icon bg-info"><i class="mdi mdi-account"></i></div>
-                                <p class="notify-details">New user registered.<small class="text-muted">1 min ago</small></p>
-                            </a>
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <div class="notify-icon bg-danger"><i class="mdi mdi-airplane"></i></div>
-                                <p class="notify-details">Carlos Crouch liked <b>Admin</b><small class="text-muted">1 min ago</small></p>
-                            </a>
-
-                            <!-- All-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item notify-all">
-                                    View All
-                                </a>
-                        </div>
-                    </li>
+                    
                 </ul>
                 <ul class="list-inline menu-left mb-0">
                     <li class="float-left">
@@ -193,7 +152,7 @@
             <div class="content">
                 <div class="container-fluid">
 
-                    <!-- Page-Title -->
+                    <!-- Page-Title 
                     <div class="row ">
                         <div class="col-sm-12">
                             <div class="page-title-box">
@@ -205,7 +164,7 @@
                                 <div class="clearfix"></div>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
 
 
                     <div class="row">
@@ -362,56 +321,56 @@
 
     <!-- Plugins  -->
 
-    <script src="{{asset('theme 2/js/jquery.min.js')}}"></script>
-    <script src="{{asset('theme 2/js/popper.min.js')}}"></script>
+    <script src="{{asset('tema2/js/jquery.min.js')}}"></script>
+    <script src="{{asset('tema2/js/popper.min.js')}}"></script>
     <!-- Popper for Bootstrap -->
 
-    <script src="{{asset('theme 2/js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('theme 2/js/detect.js')}}"></script>
-    <script src="{{asset('theme 2/js/fastclick.js')}}"></script>
-    <script src="{{asset('theme 2/js/jquery.slimscroll.js')}}"></script>
+    <script src="{{asset('tema2/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('tema2/js/detect.js')}}"></script>
+    <script src="{{asset('tema2/js/fastclick.js')}}"></script>
+    <script src="{{asset('tema2/js/jquery.slimscroll.js')}}"></script>
 
     <!-- Datatables -->
-    <script src="{{asset('theme 2/plugins/datatables/jquery.dataTables.min.js')}}"></script>
-    <script src="{{asset('theme 2/plugins/datatables/dataTables.bootstrap4.min.js')}}"></script>
-    <script src="{{asset('theme 2/plugins/datatables/accent-neutralise.js')}}"></script>
+    <script src="{{asset('tema2/plugins/datatables/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('tema2/plugins/datatables/dataTables.bootstrap4.min.js')}}"></script>
+    <script src="{{asset('tema2/plugins/datatables/accent-neutralise.js')}}"></script>
 
     <!-- Tablesaw js -->
-    <script src="{{asset('theme 2/plugins/tablesaw/js/tablesaw.js')}}"></script>
-    <script src="{{asset('theme 2/plugins/tablesaw/js/tablesaw-init.js')}}"></script>
+    <script src="{{asset('tema2/plugins/tablesaw/js/tablesaw.js')}}"></script>
+    <script src="{{asset('tema2/plugins/tablesaw/js/tablesaw-init.js')}}"></script>
 
     <!-- Sweet Alert Js  -->
-    <script src="{{asset('theme 2/plugins/sweet-alert/sweetalert2.min.js')}}"></script>
+    <script src="{{asset('tema2/plugins/sweet-alert/sweetalert2.min.js')}}"></script>
 
 
     <!-- Notification js -->
-    <script src="{{asset('theme 2/plugins/notifyjs/dist/notify.min.js')}}"></script>
-    <script src="{{asset('theme 2/plugins/notifications/notify-metro.js')}}"></script>
+    <script src="{{asset('tema2/plugins/notifyjs/dist/notify.min.js')}}"></script>
+    <script src="{{asset('tema2/plugins/notifications/notify-metro.js')}}"></script>
 
 
 
     <!-- Buttons examples -->
-    <script src="{{asset('theme 2/plugins/datatables/dataTables.buttons.min.js')}}"></script>
-    <script src="{{asset('theme 2/plugins/datatables/buttons.bootstrap4.min.js')}}"></script>
-    <script src="{{asset('theme 2/plugins/datatables/jszip.min.js')}}"></script>
-    <script src="{{asset('theme 2/plugins/datatables/pdfmake.min.js')}}"></script>
-    <script src="{{asset('theme 2/plugins/datatables/vfs_fonts.js')}}"></script>
-    <script src="{{asset('theme 2/plugins/datatables/buttons.html5.min.js')}}"></script>
-    <script src="{{asset('theme 2/plugins/datatables/buttons.print.min.js')}}"></script>
+    <script src="{{asset('tema2/plugins/datatables/dataTables.buttons.min.js')}}"></script>
+    <script src="{{asset('tema2/plugins/datatables/buttons.bootstrap4.min.js')}}"></script>
+    <script src="{{asset('tema2/plugins/datatables/jszip.min.js')}}"></script>
+    <script src="{{asset('tema2/plugins/datatables/pdfmake.min.js')}}"></script>
+    <script src="{{asset('tema2/plugins/datatables/vfs_fonts.js')}}"></script>
+    <script src="{{asset('tema2/plugins/datatables/buttons.html5.min.js')}}"></script>
+    <script src="{{asset('tema2/plugins/datatables/buttons.print.min.js')}}"></script>
 
 
-    <script src="{{asset('theme 2/js/waves.js')}}"></script>
-    <script src="{{asset('theme 2/js/wow.min.js')}}"></script>
-    <script src="{{asset('theme 2/js/jquery.nicescroll.js')}}"></script>
-    <script src="{{asset('theme 2/js/jquery.scrollTo.min.js')}}"></script>
-    <script src="{{asset('theme 2/plugins/switchery/switchery.min.js')}}"></script>
+    <script src="{{asset('tema2/js/waves.js')}}"></script>
+    <script src="{{asset('tema2/js/wow.min.js')}}"></script>
+    <script src="{{asset('tema2/js/jquery.nicescroll.js')}}"></script>
+    <script src="{{asset('tema2/js/jquery.scrollTo.min.js')}}"></script>
+    <script src="{{asset('tema2/plugins/switchery/switchery.min.js')}}"></script>
 
 
     <!-- Custom main Js -->
-    <script src="{{asset('theme 2/js/jquery.core.js')}}"></script>
-    <script src="{{asset('theme 2/js/jquery.app.js')}}"></script>
+    <script src="{{asset('tema2/js/jquery.core.js')}}"></script>
+    <script src="{{asset('tema2/js/jquery.app.js')}}"></script>
 
-    <script src="{{asset('theme 2/js/funciones.js')}}"></script>
+    <script src="{{asset('tema2/js/funciones.js')}}"></script>
 </body>
 
 </html>
