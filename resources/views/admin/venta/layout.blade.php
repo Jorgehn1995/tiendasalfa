@@ -30,10 +30,10 @@
 </head>
 
 
-<body class="fixed-left">
+<body class="widescreen fixed-left-void">
 
     <!-- Begin page -->
-    <div id="wrapper">
+    <div id="wrapper" class="forced enlarged">
 
         <!-- Top Bar Start -->
         <div class="topbar">
@@ -56,7 +56,7 @@
                             </a>
                     </li>
 
-                    
+
                 </ul>
                 <ul class="list-inline menu-left mb-0">
                     <li class="float-left">
@@ -64,7 +64,7 @@
                                 <i class="mdi mdi-menu"></i>
                             </button>
                     </li>
-                <!--
+                    <!--
                     <li class="hide-phone app-search">
                         <form role="search" class="">
                             <input type="text" placeholder="Search..." class="form-control">
@@ -90,49 +90,8 @@
                         <li>
                             <a href="{{route('logincheck')}}" class="waves-effect waves-primary"><i class="ti-home"></i><span> Inicio </span></a>
                         </li>
-                        <li>
-                            <a href="{{route('productos.index')}}" class="waves-effect waves-primary"><i class=" ti-dropbox"></i><span> Productos </span></a>
-                        </li>
-                        <li>
-                                <a href="{{route('ventas.index')}}" class="waves-effect waves-primary"><i class=" ti-shopping-cart"></i><span> Ventas </span></a>
-                            </li>
-                       <!-- <li>
-                            <a href="#" class="waves-effect waves-primary"><i class=" ti-split-h"></i><span> Existencias </span></a>
-                        </li>
-                        <li>
-                            <a href="#" class="waves-effect waves-primary"><i class=" ti-shopping-cart-full"></i><span> Vender </span></a>
-                        </li>
-                        <li class="has_sub">
-                            <a href="javascript:void(0);" class="waves-effect waves-primary"><i class=" ti-bar-chart"></i> <span> Reportes </span>
-                                    <span class="menu-arrow"></span></a>
-                            <ul class="list-unstyled">
-                                <li>
-                                    <a href="#">Ventas</a>
-                                </li>
-                                <li>
-                                    <a href="#">Productos</a>
-                                </li>
-                                <li>
-                                    <a href="#">Estadisticas</a>
-                                </li>
-                                <li>
-                                    <a href="#">Mas Vendido</a>
-                                </li>
-                                <li>
-                                    <a href="#">Perecedero</a>
-                                </li>
-                            </ul>
-                        </li>
-                        
-                        <li>
-                            <a href="#" class="waves-effect waves-primary"><i class=" ti-settings"></i><span> Ajustes </span></a>
-                        </li>-->
-                        <li>
-                            <a href="{{route('sucursales.index')}}" class="waves-effect waves-primary"><i class=" ti-map-alt"></i><span> Sucursales </span></a>
-                        </li>
-                        <li>
-                            <a href="{{route('usuarios.index')}}" class="waves-effect waves-primary"><i class=" ti-user"></i><span> Usuarios </span></a>
-                        </li>
+
+
                         <li>
                             <a href="{{route('logout')}}" class="waves-effect waves-primary"><i class=" ti-power-off"></i><span> Salir </span></a>
                         </li>
@@ -334,14 +293,6 @@
     <script src="{{asset('tema2/js/fastclick.js')}}"></script>
     <script src="{{asset('tema2/js/jquery.slimscroll.js')}}"></script>
 
-    <!-- Datatables -->
-    <script src="{{asset('tema2/plugins/datatables/jquery.dataTables.min.js')}}"></script>
-    <script src="{{asset('tema2/plugins/datatables/dataTables.bootstrap4.min.js')}}"></script>
-    <script src="{{asset('tema2/plugins/datatables/accent-neutralise.js')}}"></script>
-
-    <!-- Tablesaw js -->
-    <script src="{{asset('tema2/plugins/tablesaw/js/tablesaw.js')}}"></script>
-    <script src="{{asset('tema2/plugins/tablesaw/js/tablesaw-init.js')}}"></script>
 
     <!-- Sweet Alert Js  -->
     <script src="{{asset('tema2/plugins/sweet-alert/sweetalert2.min.js')}}"></script>
@@ -351,16 +302,10 @@
     <script src="{{asset('tema2/plugins/notifyjs/dist/notify.min.js')}}"></script>
     <script src="{{asset('tema2/plugins/notifications/notify-metro.js')}}"></script>
 
-
-
-    <!-- Buttons examples -->
-    <script src="{{asset('tema2/plugins/datatables/dataTables.buttons.min.js')}}"></script>
-    <script src="{{asset('tema2/plugins/datatables/buttons.bootstrap4.min.js')}}"></script>
-    <script src="{{asset('tema2/plugins/datatables/jszip.min.js')}}"></script>
-    <script src="{{asset('tema2/plugins/datatables/pdfmake.min.js')}}"></script>
-    <script src="{{asset('tema2/plugins/datatables/vfs_fonts.js')}}"></script>
-    <script src="{{asset('tema2/plugins/datatables/buttons.html5.min.js')}}"></script>
-    <script src="{{asset('tema2/plugins/datatables/buttons.print.min.js')}}"></script>
+    <!-- Datatables -->
+    <script src="{{asset('tema2/plugins/datatables/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('tema2/plugins/datatables/dataTables.bootstrap4.min.js')}}"></script>
+    <script src="{{asset('tema2/plugins/datatables/accent-neutralise.js')}}"></script>
 
 
     <script src="{{asset('tema2/js/waves.js')}}"></script>

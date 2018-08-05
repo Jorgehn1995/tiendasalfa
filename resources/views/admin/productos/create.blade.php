@@ -25,7 +25,7 @@
                             <input type="text" id="scod" class="form-control" placeholder="Codigo del Producto" aria-label="Recipient's username" aria-describedby="basic-addon2">
                             <div class="input-group-append">
                                 <button class="btn btn-primary waves-effect waves-light" id="sbcod" type="button"><i class="ti-search"></i> Buscar</button>
-                                <button class="btn btn-secondary waves-effect waves-light" type="button"><i class="ti-search"></i> Por Nombre</button>
+                                <!--<button class="btn btn-secondary waves-effect waves-light" type="button"><i class="ti-search"></i> Por Nombre</button>-->
                             </div>
                         </div>
                     </div>
@@ -84,7 +84,7 @@
                                 <input id="caducidad" type="date" class="form-control">
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 hide">
                             <div class="form-group ">
                                 <label class="control-label">Categoria</label>
                                 <div class="input-group">

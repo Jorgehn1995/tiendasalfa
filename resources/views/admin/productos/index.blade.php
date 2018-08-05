@@ -36,7 +36,7 @@
                             <td>{{$producto->costo}}</td>
                             <td>{{$producto->venta}}</td>
                             <td>{{$producto->venta-$producto->costo}}</td>
-                            <td>{{($producto->perecedero==0)?"No Perecedero":date("d/m/Y",strtotime($producto->caducidad))}} @if(((strtotime($producto->caducidad)-strtotime(date("Y-m-d")))/86400)<32 && $producto->perecedero==1) <span class="badge badge-danger">{{" (".((strtotime($producto->caducidad)-strtotime(date("Y-m-d")))/86400)." días)"}}</span> @endif </td>
+                            <td>{{($producto->perecedero==0 )?"No Perecedero":date("d/m/Y",strtotime($producto->caducidad))}} @if(((strtotime($producto->caducidad)-strtotime(date("Y-m-d")))/86400)<32 && $producto->perecedero==1) <span class="badge badge-danger">{{" (".((strtotime($producto->caducidad)-strtotime(date("Y-m-d")))/86400)." días)"}}</span> @endif </td>
                         </tr>
                         @empty
                         <tr>
@@ -50,4 +50,9 @@
         </div>
     </div>
 </div>
+@endsection
+@section("scripts")
+<script>
+    productos();
+</script>
 @endsection

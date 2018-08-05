@@ -31,6 +31,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::post('productos/json/store','ProductosController@store');
     Route::get('productos/json/sucursales/{id}','ProductosController@revisarexistencia');
     Route::post('productos/json/existencia','ProductosController@agregarexistencia');
-    Route::get('venta/{sucursal}','VentasController@login');
+    Route::get('venta/{sucursal}','VentasController@login')->name("ventas.sucursal");
     Route::get('venta/temp/load','VentasController@temp');
+    Route::post('venta/json/agregar','VentasController@seektotemp');
+    Route::get('venta/json/limpiartemp','VentasController@limpiartemp');
+    Route::post('venta/json/procesar','VentasController@procesar');
+    Route::get('venta/selecionar/sucursal','VentasController@index')->name("ventas.index");
 });
