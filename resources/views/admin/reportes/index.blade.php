@@ -8,7 +8,7 @@
             <article class="pricing-column col-md-4">
                     <div class="inner-box card-box">
                         <div class="plan-header text-center">
-                            <h3 class="plan-title">Sucursal </h3>
+                            <h3 class="plan-title">Reporte Diario </h3>
                             <h2 class="plan-price"><i class=" ti-shopping-cart text-success"></i></h2>
                             <div class="plan-duration">
                                 <h3>{{$sucursal->nombre}} </h3>
@@ -16,7 +16,7 @@
                         </div>
             
                         <div class="text-center">
-                            <a href="{{route("ventas.sucursal",$sucursal->idsucursal)}}" class="btn btn-primary btn-bordred btn-rounded waves-effect waves-light">Ir a Ventas</a>
+                            <a href="{{route("reportes.dia",$sucursal->idsucursal)}}" class="btn btn-primary btn-bordred btn-rounded waves-effect waves-light">Ver Reporte</a>
                         </div>
                     </div>
                 </article>

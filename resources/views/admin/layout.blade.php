@@ -15,6 +15,18 @@
     <link href="{{asset('tema2/plugins/tablesaw/css/tablesaw.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('tema2/plugins/switchery/switchery.min.css')}}" rel="stylesheet" type="text/css" />
 
+    <link href="{{asset('tema2/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('tema2/plugins/bootstrap-daterangepicker/daterangepicker.css')}}" rel="stylesheet" type="text/css" />
+    
+
+    <STYLE TYPE="text/css">
+        /* include the idautomation.com Code39 WOFF Font -- */
+
+        @font-face {
+            font-family: IDAutomationHC39M;
+            src: url({{asset('css/barcode.woff')}});
+        }
+    </STYLE>
     <link href="{{asset('tema2/plugins/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('tema2/plugins/datatables/buttons.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('tema2/plugins/datatables/responsive.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
@@ -41,7 +53,7 @@
             <!-- LOGO -->
             <div class="topbar-left">
                 <div class="text-center">
-                    <a href="index.html" class="logo"><i class="ti-shopping-cart"></i> <span>AlfaPOS</span></a>
+                    <a href="{{route('logincheck')}}" class="logo"><i class="ti-shopping-cart"></i> <span>AlfaPOS</span></a>
                 </div>
             </div>
 
@@ -49,14 +61,11 @@
             <nav class="navbar-custom">
 
                 <ul class="list-inline float-right mb-0">
-
                     <li class="list-inline-item notification-list hide-phone">
                         <a class="nav-link waves-light waves-effect" href="#" id="btn-fullscreen">
                                 <i class="mdi mdi-crop-free noti-icon"></i>
                             </a>
                     </li>
-
-                    
                 </ul>
                 <ul class="list-inline menu-left mb-0">
                     <li class="float-left">
@@ -64,7 +73,8 @@
                                 <i class="mdi mdi-menu"></i>
                             </button>
                     </li>
-                <!--
+
+                    <!--
                     <li class="hide-phone app-search">
                         <form role="search" class="">
                             <input type="text" placeholder="Search..." class="form-control">
@@ -94,36 +104,30 @@
                             <a href="{{route('productos.index')}}" class="waves-effect waves-primary"><i class=" ti-dropbox"></i><span> Productos </span></a>
                         </li>
                         <li>
-                                <a href="{{route('ventas.index')}}" class="waves-effect waves-primary"><i class=" ti-shopping-cart"></i><span> Ventas </span></a>
-                            </li>
-                       <!-- <li>
+                            <a href="{{route('ventas.index')}}" class="waves-effect waves-primary"><i class=" ti-shopping-cart"></i><span> Ventas </span></a>
+                        </li>
+                        <!-- <li>
                             <a href="#" class="waves-effect waves-primary"><i class=" ti-split-h"></i><span> Existencias </span></a>
                         </li>
                         <li>
                             <a href="#" class="waves-effect waves-primary"><i class=" ti-shopping-cart-full"></i><span> Vender </span></a>
-                        </li>
+                        </li>-->
                         <li class="has_sub">
                             <a href="javascript:void(0);" class="waves-effect waves-primary"><i class=" ti-bar-chart"></i> <span> Reportes </span>
                                     <span class="menu-arrow"></span></a>
                             <ul class="list-unstyled">
                                 <li>
-                                    <a href="#">Ventas</a>
+                                    <a href="{{route('reportes.index')}}">Ventas del Dia</a>
                                 </li>
                                 <li>
-                                    <a href="#">Productos</a>
+                                    <a href="{{route('reportes.inicio.sucursal')}}">Ganancias</a>
                                 </li>
                                 <li>
-                                    <a href="#">Estadisticas</a>
-                                </li>
-                                <li>
-                                    <a href="#">Mas Vendido</a>
-                                </li>
-                                <li>
-                                    <a href="#">Perecedero</a>
+                                    <a href="{{route('reportes.inversiones')}}">Inversiones</a>
                                 </li>
                             </ul>
                         </li>
-                        
+                        <!-- 
                         <li>
                             <a href="#" class="waves-effect waves-primary"><i class=" ti-settings"></i><span> Ajustes </span></a>
                         </li>-->
@@ -368,6 +372,13 @@
     <script src="{{asset('tema2/js/jquery.nicescroll.js')}}"></script>
     <script src="{{asset('tema2/js/jquery.scrollTo.min.js')}}"></script>
     <script src="{{asset('tema2/plugins/switchery/switchery.min.js')}}"></script>
+
+    <!-- js graficas -->
+    <!--Morris Chart-->
+    <script src="{{asset('tema2/plugins/morris/morris.min.js')}}"></script>
+    <script src="{{asset('tema2/plugins/raphael/raphael-min.js')}}"></script>
+
+
 
 
     <!-- Custom main Js -->

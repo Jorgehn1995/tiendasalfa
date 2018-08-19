@@ -16,4 +16,7 @@ class Sucursal extends Model
     public function encargado(){
         return $this->belongsTo('App\User','idusuario');
     }
+    public function existencias(){
+        return $this->hasMany('App\Existencia','idsucursal');
+    }
 }

@@ -3,14 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Categoria;
-use App\Producto;
-use App\User;
 use App\Existencia;
+use App\Presentacion;
+use App\Producto;
 use App\Sucursal;
-use Illuminate\Support\Facades\Auth;
-use Laracasts\Flash\Flash;
-use Illuminate\Support\Facades\URL;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProductosController extends Controller
 {
@@ -22,7 +21,8 @@ class ProductosController extends Controller
     }
     public function create()
     {
-        return view('admin.productos.create');
+        $productos = Producto::where("idtienda", "=", Auth::User()->idtienda)->get();
+        return view('admin.productos.create')->with("productos", $productos);
     }
     public function busquedaajax($id)
     {
@@ -43,92 +43,128 @@ class ProductosController extends Controller
         $categorias = Categoria::where('idtienda', '=', Auth::User()->idtienda)->get();
         return $categorias->all();
     }
-    public function store(Request $request){
-        if($request->metodo=="create"){
-            $cod=Producto::where("barra","=",$request->barra)->where('idtienda', '=', Auth::User()->idtienda)->count();
-            if($cod>0){
-                $response=array(
-                    array("error"=>1,"title"=>"Error al Registrar","msg"=>"El codigo ya pertenece a otro producto")
+    public function store(Request $request)
+    {
+        if ($request->metodo == "create") {
+            $cod = Producto::where("barra", "=", $request->barra)->where('idtienda', '=', Auth::User()->idtienda)->count();
+            if ($cod > 0) {
+                $response = array(
+                    array("error" => 1, "title" => "Error al Registrar", "msg" => "El codigo ya pertenece a otro producto"),
                 );
                 return $response;
             }
-            $producto=new Producto($request->all());
-            if($request->caducidad==""){
-                $producto->perecedero=0;
-            }else{
-                $producto->perecedero=1;
+            $producto = new Producto($request->all());
+            if ($request->caducidad == "") {
+                $producto->perecedero = 0;
+            } else {
+                $producto->perecedero = 1;
             }
-            $producto->idtienda=Auth::User()->idtienda;
+            $producto->idtienda = Auth::User()->idtienda;
             $producto->save();
-            $response=array(
-                array("error"=>0,"title"=>"Operación Exitosa","msg"=>"El producto ha sido ingresado exitosamente","codigo"=>$request->barra)
+            $response = array(
+                array("error" => 0, "title" => "Operación Exitosa", "msg" => "El producto ha sido ingresado exitosamente", "codigo" => $request->barra),
             );
             return $response;
-        }else{
-            $cod=Producto::where("idproducto","!=",$request->idproducto)->where("barra","=",$request->barra)->where('idtienda', '=', Auth::User()->idtienda)->count();
-            if($cod>0){
-                $response=array(
-                    array("error"=>1,"title"=>"Error al Actualizar","msg"=>"El codigo ya pertenece a otro producto")
+        } else {
+            $cod = Producto::where("idproducto", "!=", $request->idproducto)->where("barra", "=", $request->barra)->where('idtienda', '=', Auth::User()->idtienda)->count();
+            if ($cod > 0) {
+                $response = array(
+                    array("error" => 1, "title" => "Error al Actualizar", "msg" => "El codigo ya pertenece a otro producto"),
                 );
                 return $response;
             }
-            $producto=Producto::find($request->idproducto);
-            $producto->nombre=$request->nombre;
-            $producto->costo=$request->costo;
-            $producto->venta=$request->venta;
-            $producto->caducidad=$request->caducidad;
-            $producto->barra=$request->barra;
-            $producto->idcategoria=$request->idcategoria;
-            if($request->caducidad==""){
-                $producto->perecedero=0;
-            }else{
-                $producto->perecedero=1;
+            $producto = Producto::find($request->idproducto);
+            $producto->nombre = $request->nombre;
+            $producto->costo = $request->costo;
+            $producto->venta = $request->venta;
+            $producto->caducidad = $request->caducidad;
+            $producto->barra = $request->barra;
+            $producto->idcategoria = $request->idcategoria;
+            if ($request->caducidad == "") {
+                $producto->perecedero = 0;
+            } else {
+                $producto->perecedero = 1;
             }
             $producto->save();
-            $response=array(
-                array("error"=>0,"title"=>"Operación Exitosa","msg"=>"El producto ha sido actualizado exitosamente","codigo"=>$request->barra)
+            $response = array(
+                array("error" => 0, "title" => "Operación Exitosa", "msg" => "El producto ha sido actualizado exitosamente", "codigo" => $request->barra),
             );
             return $response;
         }
     }
-    public function revisarexistencia($id){
-        $sucursal=Sucursal::where("idtienda","=",Auth::User()->idtienda)->get();
+    public function revisarexistencia($id)
+    {
+        $sucursal = Sucursal::where("idtienda", "=", Auth::User()->idtienda)->get();
         //$array=array();
-        if($sucursal){
-            $index=0;
-            foreach($sucursal as $s ){
-                $existencia=Existencia::where("idsucursal","=",$s->idsucursal)->where("idproducto","=",$id)->first();
-                
-                if(!$existencia){
-                    
-                    $ar=array("idsucursal"=>$s->idsucursal,"nombre"=>$s->nombre,"idexistencia"=>"0","existencia"=>"0","idproducto"=>$id);       
-                    $array[$index]=$ar;
+        if ($sucursal) {
+            $index = 0;
+            foreach ($sucursal as $s) {
+                $existencia = Existencia::where("idsucursal", "=", $s->idsucursal)->where("idproducto", "=", $id)->first();
+
+                if (!$existencia) {
+
+                    $ar = array("idsucursal" => $s->idsucursal, "nombre" => $s->nombre, "idexistencia" => "0", "existencia" => "0", "idproducto" => $id);
+                    $array[$index] = $ar;
                     $index++;
-                }else{
-                    $ar=array("idsucursal"=>$s->idsucursal,"nombre"=>$s->nombre,"idexistencia"=>$existencia->idexistencia,"existencia"=>$existencia->existencia,"idproducto"=>$id);       
-                    $array[$index]=$ar;
+                } else {
+                    $ar = array("idsucursal" => $s->idsucursal, "nombre" => $s->nombre, "idexistencia" => $existencia->idexistencia, "existencia" => $existencia->existencia, "idproducto" => $id);
+                    $array[$index] = $ar;
                     $index++;
                 }
-                
+
             }
         }
         return $array;
 
     }
-    public function agregarexistencia(Request $request){
-        $idproducto=$request->idproducto;
-        $idsucursal=$request->idsucursal;
-        $existencia=$request->existencia;
-        $idexistencia=$request->idexistencia;
-        if($idexistencia==0){
-            $existe=new Existencia($request->all());
-            $existe->idtienda =Auth::User()->idtienda;
+    public function agregarexistencia(Request $request)
+    {
+        $idproducto = $request->idproducto;
+        $idsucursal = $request->idsucursal;
+        $existencia = $request->existencia;
+        $idexistencia = $request->idexistencia;
+        if ($idexistencia == 0) {
+            $existe = new Existencia($request->all());
+            $existe->idtienda = Auth::User()->idtienda;
             $existe->save();
-        }else{
-            $existe=Existencia::find($idexistencia);
-            $existe->existencia+=$existencia;
+        } else {
+            $existe = Existencia::find($idexistencia);
+            $existe->existencia += $existencia;
             $existe->save();
         }
+        return "true";
+    }
+    public function presentaciones($id)
+    {
+        $presentaciones = Presentacion::where("idproducto", "=", $id)->get();
+        return $presentaciones;
+    }
+    public function agregarpresentacion(Request $request)
+    {
+        
+        $nombre = $request->prenombre;
+        $precio = $request->preprecio;
+        $unidades = $request->preunidades;
+        $idproducto = $request->idproducto;
+        $idpresentacion = 0;
+        if ($idpresentacion == 0) {
+            $present = new Presentacion();
+
+        } else {
+            $present = Presentacion::find($idexistencia);
+        }
+        $present->idproducto = $idproducto;
+        $present->nombre = $nombre;
+        $present->cantidad = $unidades;
+        $present->precio = $precio;
+        $present->save();
+        return "true";
+    }
+    public function eliminarpresentacion(Request $request)
+    {
+        $idpresentacion = $request->idpresentacion;
+        $present = Presentacion::find($idpresentacion);
+        $present->delete();
         return "true";
     }
 }

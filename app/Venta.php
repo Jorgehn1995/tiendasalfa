@@ -13,4 +13,7 @@ class Venta extends Model
     protected $primaryKey ="idventa";
     protected $fillable = ['fecha','subtotal','descuento','total','costos','ganancias','idcaja','idsucursal','idtienda','idcliente'];
     public $timestamps = true;
+    public function detalles(){
+        return $this->hasMany('App\Detalle','idventa');
+    }
 }

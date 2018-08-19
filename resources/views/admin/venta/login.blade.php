@@ -37,7 +37,7 @@
                                 <tr>
                                     <td>Barra</td>
                                     <td>Producto</td>
-                                    <td>Precio U.</td>
+                                    <td>Precio</td>
                                     <td>Cantidad</td>
                                     <td>Total</td>
                                     <td>Opciones</td>
@@ -45,7 +45,7 @@
                             </thead>
                             <tbody id="temp">
                                 <tr>
-                                    <td class="text-center " colspan="6">No hay productos agregados</td>
+                                    <td class="text-center " colspan="8">No hay productos agregados</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -116,30 +116,45 @@
                 <h4 class="modal-title" id="myLargeModalLabel">Productos</h4>
             </div>
             <div class="modal-body">
-                <table class="table table-xs" id="modalproductos">
+                <table class="table table-xs" width="100%" id="modalproductos">
                     <thead>
                         <tr>
                             <td>Barra</td>
-                            <td>Producto</td>
-                            <td>Precio U.</td>
+                            <td style="white-space:nowrap;">Producto</td>
+                            <td>Unidades</td>
+                            <td>Precio</td>
                             <td width="15%">Cantidad</td>
-                            <td>Agregar</td>
+                            <td>Acciones</td>
                         </tr>
                     </thead>
                     <tbody>
                         @forelse($productos as $producto)
                         <tr>
                             <td>{{$producto->barra}}</td>
-                            <td>{{$producto->nombre}}</td>
+                            <td>{{$producto->nombre}} Unidad</td>
+                            <td>1</td>
                             <td>{{$producto->venta}}</td>
-                            <td width="15%"><input type="number" class="form-control cantpro"></td>
+                            <td width="15%"><input type="number" class="form-control cantpro" ></td>
                             <td>
                                 <div class="col-md-12">
-                                    <button class="btn btn-primary btn-sm addnombre" data-barra="{{$producto->barra}}">Agregar</button>
+                                    <button class="btn btn-primary btn-sm addnombre" data-idpresentacion="0" data-barra="{{$producto->barra}}">Agregar</button>
                                 </div>
                             </td>
                         </tr>
-                        @empty
+                        @foreach($producto->presentaciones as $presentacion)
+                        <tr>
+                            <td>{{$producto->barra}}</td>
+                            <td>{{$producto->nombre." ".$presentacion->nombre}}</td>
+                            <td>{{$presentacion->cantidad}}</td>
+                            <td>{{$presentacion->precio}}</td>
+                            <td width="15%"><input type="number" class="form-control cantpro" ></td>
+                            <td>
+                                <div class="col-md-12">
+                                    <button class="btn btn-primary btn-sm addnombre" data-idpresentacion="{{$presentacion->idpresentacion}}" data-barra="{{$producto->barra}}">Agregar</button>
+                                </div>
+                            </td>
+                        </tr>
+                        @endforeach @empty
                         <tr>
                             <td colspan="4">No existen productos</td>
                         </tr>
