@@ -378,7 +378,9 @@
     <script src="{{asset('tema2/plugins/morris/morris.min.js')}}"></script>
     <script src="{{asset('tema2/plugins/raphael/raphael-min.js')}}"></script>
 
-
+<!--Morris Chart-->
+<script src="{{asset('tema2/plugins/waypoints/lib/jquery.waypoints.min.js')}}"></script>
+<script src="{{asset('tema2/plugins/counterup/jquery.counterup.min.js')}}"></script>
 
 
     <!-- Custom main Js -->

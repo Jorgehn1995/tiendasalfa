@@ -31,7 +31,7 @@ class ReportesController extends Controller
             return redirect()->route("reportes.index");
         }
         $ventas = Venta::where("idsucursal", "=", $id)->whereDate("fecha", "=", date("Y-m-d"))->get();
-        return view("admin.reportes.dia")->with("ventas", $ventas)->with("sucursal", $sucursal);
+        return view("admin.reportes.dia")->with("ventas", $ventas)->with("sucursal", $sucursal)->with("bags",$ventas->count());
     }
     public function jsonfechados($idsucursal, $inicio, $fin)
     {

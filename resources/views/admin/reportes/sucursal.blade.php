@@ -73,7 +73,7 @@
 <div class="col-lg-3 hide col-md-3">
     <div class="widget-bg-color-icon card-box">
         <div class="bg-icon bg-icon-danger pull-left">
-            <i class="ti-money text-success"></i>
+            <i class="ti-package text-success"></i>
         </div>
         <div class="text-right">
             <h3 class="text-dark m-t-10">Q <b class="counter" id="ncostos"></b></h3>
@@ -97,7 +97,7 @@
 <div class="col-lg-3 hide col-md-3">
     <div class="widget-bg-color-icon card-box">
         <div class="bg-icon bg-icon-info pull-left">
-            <i class=" ti-bag text-success"></i>
+            <i class="  ti-money text-success"></i>
         </div>
         <div class="text-right">
             <h3 class="text-dark m-t-10">Q <b class="counter" id="ningresos"></b></h3>
