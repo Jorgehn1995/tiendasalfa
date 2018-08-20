@@ -13,6 +13,16 @@ use Laracasts\Flash\Flash;
 
 class ReportesController extends Controller
 {
+    public function caducidad(){
+        $hoy=date("Y-m-d");
+        $hace1mes=date('Y-m-d', strtotime($hoy. ' - 60 days'));
+        $mas1mes=date('Y-m-d', strtotime($hoy. ' + 60 days'));
+        //dd($hace1mes);
+        $vencidos=Producto::where("idtienda",Auth::User()->idtienda)->whereDate("caducidad",">=",$hace1mes)->whereDate("caducidad","<=",$hoy)->get();
+        $porvencer=Producto::where("idtienda",Auth::User()->idtienda)->whereDate("caducidad",">=",$hoy)->whereDate("caducidad","<=",$mas1mes)->orderBy('caducidad','ASC')->get();
+        //->whereDate("caducidad",">=",$hace1mes)
+        return view('admin.reportes.caducidad')->with("vencidos",$vencidos)->with("porvencer",$porvencer);
+    }
     public function index()
     {
         if (Auth::User()->idtipo == 1) {

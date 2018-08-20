@@ -15,13 +15,13 @@
     <link href="{{asset('tema2/plugins/tablesaw/css/tablesaw.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('tema2/plugins/switchery/switchery.min.css')}}" rel="stylesheet" type="text/css" />
 
-    <link href="{{asset('tema2/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('tema2/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css')}}" rel="stylesheet" type="text/css"
+    />
     <link href="{{asset('tema2/plugins/bootstrap-daterangepicker/daterangepicker.css')}}" rel="stylesheet" type="text/css" />
-    
+
+    <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+128" rel="stylesheet">
 
     <STYLE TYPE="text/css">
-        /* include the idautomation.com Code39 WOFF Font -- */
-
         @font-face {
             font-family: IDAutomationHC39M;
             src: url({{asset('css/barcode.woff')}});
@@ -116,15 +116,20 @@
                             <a href="javascript:void(0);" class="waves-effect waves-primary"><i class=" ti-bar-chart"></i> <span> Reportes </span>
                                     <span class="menu-arrow"></span></a>
                             <ul class="list-unstyled">
-                                <li>
-                                    <a href="{{route('reportes.index')}}">Ventas del Dia</a>
-                                </li>
-                                <li>
-                                    <a href="{{route('reportes.inicio.sucursal')}}">Ganancias</a>
-                                </li>
-                                <li>
-                                    <a href="{{route('reportes.inversiones')}}">Inversiones</a>
-                                </li>
+                                    <li>
+                                            <a href="{{route('reportes.caducados')}}">Caducidad</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{route('reportes.inversiones')}}">Inversiones</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{route('reportes.inicio.sucursal')}}">Sucursales</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{route('reportes.index')}}">Ventas del Dia</a>
+                                        </li>
+
+
                             </ul>
                         </li>
                         <!-- 
@@ -378,9 +383,9 @@
     <script src="{{asset('tema2/plugins/morris/morris.min.js')}}"></script>
     <script src="{{asset('tema2/plugins/raphael/raphael-min.js')}}"></script>
 
-<!--Morris Chart-->
-<script src="{{asset('tema2/plugins/waypoints/lib/jquery.waypoints.min.js')}}"></script>
-<script src="{{asset('tema2/plugins/counterup/jquery.counterup.min.js')}}"></script>
+    <!--Morris Chart-->
+    <script src="{{asset('tema2/plugins/waypoints/lib/jquery.waypoints.min.js')}}"></script>
+    <script src="{{asset('tema2/plugins/counterup/jquery.counterup.min.js')}}"></script>
 
 
     <!-- Custom main Js -->

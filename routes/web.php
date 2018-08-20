@@ -65,4 +65,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     //Route::get('reportes/inicio/json','JsonController@index')->name("json.index");
     Route::get('reportes/inicio/json/{id}/{intevalo}','JsonController@index')->name("json.index");
     Route::get('reportes/inicio/detalles/{idventa}','JsonController@detalles')->name("json.index");
+    //reportes caducidad
+    Route::get('reportes/caducidad','ReportesController@caducidad')->name("reportes.caducados");
+    //Route::get('reportes/caducidad/json','ReportesController@inversiones')->name("reportes.inversiones");
 });
